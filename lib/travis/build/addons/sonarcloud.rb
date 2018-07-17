@@ -90,7 +90,7 @@ SH
             when 'osx'
               build_wrapper=BUILD_WRAPPER_MACOSX
             else
-              sh.echo "Can't install SonarSource build wrapper for platform: $TRAVIS_OS_NAME.", ansi: :red
+              sh.echo "Can't install SonarSource build wrapper for platform: #{os}", ansi: :red
               return
           end
 

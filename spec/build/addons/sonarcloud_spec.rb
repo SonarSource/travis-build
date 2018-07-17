@@ -36,7 +36,7 @@ describe Travis::Build::Addons::Sonarcloud, :sexp do
 
     it { should include_sexp [:export, ['SONAR_SCANNER_HOME', '$HOME/.sonarscanner/sonar-scanner-3.0.3.778'], {:echo=>true}] }
     it { should include_sexp [:export, ['PATH', "\"$PATH:$HOME/.sonarscanner/sonar-scanner-3.0.3.778/bin\""]] }
-    it { should include_sexp [:echo, "Can't install SonarSource build wrapper for platform: $TRAVIS_OS_NAME.", {:ansi=>:red}] }
+    it { should include_sexp [:echo, "Can't install SonarSource build wrapper for platform: ", {:ansi=>:red}] }
     it { should_not include_sexp [:export, ['PATH', "\"$PATH:$sq_build_wrapper_dir/build-wrapper-linux-x86\""]] }
   end
 
